@@ -2,15 +2,18 @@
   "name": "nodejs-tasks",
   "version": "1.0.0",
   "description": "Node JS practice",
-  "main": "httpmethods.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon http_methods.js",
+    "start": "nodemon ./folder_structure/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^2.0.20"
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.20",
+    "winston": "^3.8.2"
   }
 }
