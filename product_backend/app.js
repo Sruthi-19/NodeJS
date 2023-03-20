@@ -20,6 +20,25 @@ app.post("/addProduct", (req, res) => {
   });
 });
 
+//Delete  product
+app.delete("/deleteProduct", (req, res) => {
+  let pdt = productModel
+    .deleteOne({ name: req.query.name })
+    .then((pdt) => res.status(200).json(pdt));
+});
+
+//Update product. Id is used for reference and other fields are updated
+app.patch("/updateProduct", (req, res) => {
+  let pdt = productModel
+    .updateOne({
+      id: req.query.id,
+      name: req.query.name,
+      rating: req.query.rating,
+      price: req.query.price,
+    })
+    .then((pdt) => res.status(200).json(pdt));
+});
+
 //Filter products based on category, rating and price range if given. The page and limit value can also be entered
 app.get("/product/filter", (req, res) => {
   let filter = {};
